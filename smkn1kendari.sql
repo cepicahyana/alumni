@@ -1,6 +1,6 @@
 /*
 SQLyog Community v12.3.3 (64 bit)
-MySQL - 10.4.14-MariaDB : Database - sma
+MySQL - 10.4.14-MariaDB : Database - sman1kendari
 *********************************************************************
 */
 
@@ -42,133 +42,65 @@ CREATE TABLE `admin` (
 /*Data for the table `admin` */
 
 insert  into `admin`(`id_admin`,`username`,`password`,`level`,`profilename`,`gender`,`profileimg`,`wa`,`email`,`profileaddress`,`ip`,`sts_aktif`,`last_login`,`_cid`,`_ctime`,`_uid`,`_utime`,`lat`,`lng`) values 
-(2,'super','1b3231655cebb7a1f783eddf27d254ca',1,'IRONMAN','Male','fileadmin_22012021073610.png','0852 3334 1122','robot@mail.net','USA',NULL,1,'2021-02-16 13:26:23',NULL,NULL,NULL,NULL,NULL,NULL),
-(14,'admin','21232f297a57a5a743894a0e4a801fc3',2,'Mr.Cepi','Male','fileadmin_22012021013555.png','0852 2096 9224','cs@gmail.com','Indonesia',NULL,1,'2021-02-16 17:27:50',NULL,NULL,NULL,NULL,NULL,NULL);
+(2,'super','1b3231655cebb7a1f783eddf27d254ca',1,'IRONMAN','Male','fileadmin_22012021073610.png','0852 3334 1122','robot@mail.net','USA',NULL,1,'2021-02-11 16:05:11',NULL,NULL,NULL,NULL,NULL,NULL),
+(14,'admin','21232f297a57a5a743894a0e4a801fc3',2,'Mr.Cepi','Male','fileadmin_22012021013555.png','0852 2096 9224','cs@gmail.com','Indonesia',NULL,1,'2021-02-17 14:37:26',NULL,NULL,NULL,NULL,NULL,NULL);
 
-/*Table structure for table `data_acara` */
+/*Table structure for table `data _chat` */
 
-DROP TABLE IF EXISTS `data_acara`;
+DROP TABLE IF EXISTS `data _chat`;
 
-CREATE TABLE `data_acara` (
+CREATE TABLE `data _chat` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `kode` varchar(100) DEFAULT NULL,
-  `id_jenis_acara` int(11) DEFAULT NULL,
-  `judul_acara` text DEFAULT NULL,
-  `durasi` int(11) DEFAULT NULL,
-  `tgl` date DEFAULT NULL,
-  `waktu` varchar(10) DEFAULT NULL,
-  `_cid` int(11) DEFAULT NULL,
-  `_ctime` datetime DEFAULT current_timestamp(),
-  `_uid` int(11) DEFAULT NULL,
-  `_utime` datetime DEFAULT NULL,
-  `tempat` varchar(100) DEFAULT NULL,
-  `cp` varchar(100) DEFAULT NULL,
-  `file_peserta` varchar(100) DEFAULT NULL,
-  `jml_undangan` int(11) DEFAULT NULL,
-  `pewara` varchar(250) DEFAULT NULL,
-  `s_tempat` varchar(250) DEFAULT NULL,
-  `l_media` varchar(250) DEFAULT NULL,
-  `ajudan_dinas` varchar(250) DEFAULT NULL,
-  `watermark` varchar(250) DEFAULT NULL,
-  `pakaian` text DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `data_acara` */
-
-insert  into `data_acara`(`id`,`kode`,`id_jenis_acara`,`judul_acara`,`durasi`,`tgl`,`waktu`,`_cid`,`_ctime`,`_uid`,`_utime`,`tempat`,`cp`,`file_peserta`,`jml_undangan`,`pewara`,`s_tempat`,`l_media`,`ajudan_dinas`,`watermark`,`pakaian`) values 
-(3,'20210125160009',1,'yyy',1,'2021-01-25',NULL,14,'2021-01-25 16:00:09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(4,'20210125160029',1,'dddd',4,'2021-01-25',NULL,14,'2021-01-25 16:00:29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(5,'20210126061214',1,'kemerdekaan',2021,'2021-01-28',NULL,14,'2021-01-26 06:12:14',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(6,'20210126061828',4,'fgfgfgfg',1,'2021-01-26',NULL,14,'2021-01-26 06:18:28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(7,'20210126062846',1,'kemerdekaan',1,'2021-01-26',NULL,14,'2021-01-26 06:28:46',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(8,'20210126062947',1,'dfdfdfdf',1,'2021-01-26',NULL,14,'2021-01-26 06:29:47',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(9,'20210126063119',1,'kemerdekaan',1,'2021-01-26',NULL,14,'2021-01-26 06:31:19',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(10,'20210127210939',1,'dfdfdf',1,'2021-01-27',NULL,14,'2021-01-27 21:09:39',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(11,'20210127225631',1,'Kemerdekan republik indensia tahun 2021 Kemerdekan republik indensia tahun 2021Kemerdekan republik indensia tahun 2021 Kemerdekan republik indensia tahun 2021',6,'2021-01-29',NULL,14,'2021-01-27 22:56:31',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(12,'20210128103116',1,'I just create the event',1,'2021-01-28',NULL,14,'2021-01-28 10:31:16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(13,'20210128105039',1,'pelantikan kapolri',1,'2021-01-28',NULL,14,'2021-01-28 10:50:39',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(14,'20210128143914',1,'Terpesona',NULL,'2021-01-28','13.00',14,'2021-01-28 14:39:14',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(15,'20210128144429',1,'jen',NULL,'0000-00-00','',14,'2021-01-28 14:44:29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(16,'20210128185601',1,'sdsdsd',NULL,'2021-01-29','34:34',14,'2021-01-28 18:56:01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(17,'20210129064917',1,'pelantikan',NULL,'0000-00-00','',14,'2021-01-29 06:49:17',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(18,'20210129071912',1,'TES',NULL,'0000-00-00','',14,'2021-01-29 07:19:12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(19,'20210129071934',1,'dddd',NULL,'0000-00-00','',14,'2021-01-29 07:19:34',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(20,'20210129072021',1,'sdfsdfdsf',NULL,'0000-00-00','',14,'2021-01-29 07:20:21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(21,'20210129072049',1,'sdsdsdsd',NULL,'0000-00-00','',14,'2021-01-29 07:20:49',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(22,'20210129073355',1,'acara negara',NULL,'2021-01-29','34:34',14,'2021-01-29 07:33:55',NULL,NULL,NULL,NULL,'2021/20210129073355/file-peserta-29_01_2021.docx',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(23,'20210129080456',1,'siap siap',NULL,'2021-01-29','',14,'2021-01-29 08:04:56',NULL,NULL,NULL,NULL,'2021/20210129080456/file-peserta-29_01_2021.JPG',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(24,'20210129082625',1,'okok',NULL,'2021-01-29','',14,'2021-01-29 08:26:25',NULL,NULL,NULL,NULL,'2021/20210129082625/file-peserta-29_01_2021.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(25,'20210129112037',1,'trip newzealend',NULL,'2021-01-29','',14,'2021-01-29 11:20:37',NULL,NULL,NULL,NULL,'2021/20210129112037/file-peserta-29_01_2021.docx',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(26,'2021012916463989',1,'you ',NULL,'2021-01-29','',14,'2021-01-29 16:46:39',NULL,NULL,NULL,NULL,'2021/2021012916463989/file-peserta-29_01_2021.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(27,'2021013008550164',1,'hari sabtu',NULL,'2021-01-30','',14,'2021-01-30 08:55:01',NULL,NULL,NULL,NULL,'2021/2021013008550164/file-peserta-30_01_2021.JPG',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(28,'2021013008582761',1,'sabtu',NULL,'2021-01-30','',14,'2021-01-30 08:58:27',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(29,'2021013010053898',1,'sabtu siang',NULL,'2021-02-03','',14,'2021-01-30 10:05:38',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(30,'2021013014590036',1,'sabtu malam',NULL,'2021-01-30','',14,'2021-01-30 14:59:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(31,'2021020118483273',1,'peresmian gedung gbk',NULL,'2021-02-01','',14,'2021-02-01 18:48:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(32,'2021020511271153',32,'Peresmian gedung gbk',NULL,'2021-02-27','34:34',14,'2021-02-05 09:32:03',14,'2021-02-09 16:35:14','JAKARTAf','085221288210','2021/2021020509535726/file-peserta-05_02_2021.xlsx',34,'rererer','e','sss','sss','asas','');
-
-/*Table structure for table `kalkulasi_waktu` */
-
-DROP TABLE IF EXISTS `kalkulasi_waktu`;
-
-CREATE TABLE `kalkulasi_waktu` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `agenda` text DEFAULT NULL,
-  `jam_mulai` time DEFAULT NULL,
-  `jam_akhir` time DEFAULT NULL,
-  `durasi` varchar(5) DEFAULT NULL,
-  `kode` varchar(100) DEFAULT NULL,
   `tgl` datetime DEFAULT current_timestamp(),
-  `urut` int(11) DEFAULT NULL,
+  `sender` int(11) DEFAULT NULL,
+  `receive` int(11) DEFAULT NULL,
+  `chat` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-/*Data for the table `kalkulasi_waktu` */
+/*Data for the table `data _chat` */
 
-insert  into `kalkulasi_waktu`(`id`,`agenda`,`jam_mulai`,`jam_akhir`,`durasi`,`kode`,`tgl`,`urut`) values 
-(34,'sambutan','07:30:00','07:50:00','20','2021012916463989','2021-01-29 23:30:02',1),
-(35,'doa','09:51:00','10:21:00','30','2021012916463989','2021-01-29 23:30:23',7),
-(36,NULL,'10:59:00','07:00:00',NULL,'2021012916463989','2021-01-29 23:31:57',9),
-(37,'dsdsd','08:51:00','09:21:00','30','2021012916463989','2021-01-29 23:36:58',5),
-(38,'','10:21:00','10:59:00','38','2021012916463989','2021-01-29 23:37:06',8),
-(39,'33','08:21:00','08:51:00','30','2021012916463989','2021-01-29 23:37:08',4),
-(40,'break','07:50:00','07:51:00','1','2021012916463989','2021-01-29 23:37:16',2),
-(41,NULL,'09:21:00','09:51:00','30','2021012916463989','2021-01-29 23:41:13',6),
-(42,NULL,'07:51:00','08:21:00','30','2021012916463989','2021-01-29 23:43:36',3),
-(43,NULL,'07:00:00','07:30:00','30','2021012916463989','2021-01-29 23:44:36',10),
-(44,'ss','14:35:00','07:00:00','14:35','2021013008582761','2021-01-30 08:58:27',1),
-(45,'terpesona','07:00:00','07:00:00','09:00','2021013008582761','2021-01-30 08:59:31',2),
-(46,'','07:00:00','07:00:00','07:15','2021013008582761','2021-01-30 09:01:51',3),
-(47,'upacara','01:15:00','01:20:00','5','2021013008550164','2021-01-30 09:13:27',1),
-(48,'doa','01:22:00','01:27:00','5','2021013008550164','2021-01-30 09:13:32',3),
-(49,'makan siang','01:27:00','01:49:00','22','2021013008550164','2021-01-30 09:15:48',4),
-(50,'sambutan','01:20:00','01:22:00','2','2021013008550164','2021-01-30 09:16:35',2),
-(51,'sambutan','07:30:00','08:00:00','30','2021013010053898','2021-01-30 10:05:38',1),
-(52,'doa oleh pak ustd','09:10:00','09:15:00','5','2021013010053898','2021-01-30 10:06:37',4),
-(53,'break','09:00:00','09:10:00','10','2021013010053898','2021-01-30 10:07:09',3),
-(54,'','08:00:00','09:00:00','60','2021013010053898','2021-01-30 10:22:34',2),
-(55,'pentutupan','09:15:00','09:45:00','30','2021013010053898','2021-01-30 10:23:50',5),
-(56,'sambutan','07:30:00','08:10:00','40','2021013014590036','2021-01-30 14:59:00',1),
-(57,'doa','09:10:00','10:10:00','60','2021013014590036','2021-01-30 14:59:57',3),
-(61,'','08:10:00','09:10:00','60','2021013014590036','2021-01-30 15:05:25',2),
-(68,'sambutan menteri','07:30:00','07:41:00','11','2021020118483273','2021-02-01 18:48:32',1),
-(69,NULL,'07:41:00','08:11:00','30','2021020118483273','2021-02-01 18:48:56',2),
-(70,NULL,NULL,NULL,NULL,'2021020509320396','2021-02-05 09:32:03',1),
-(71,'sambutan','15:35:00','16:05:00','30','2021020509535726','2021-02-05 09:55:44',1),
-(72,'doa ','16:05:00','16:35:00','30','2021020509535726','2021-02-05 09:56:04',2),
-(75,'makan siang','16:35:00','17:03:00','28','2021020509535726','2021-02-05 09:59:07',3),
-(76,NULL,'18:03:00','18:33:00','30','2021020509535726','2021-02-05 09:59:08',6),
-(77,NULL,'17:33:00','18:03:00','30','2021020509535726','2021-02-05 09:59:10',5),
-(79,NULL,'17:03:00','17:33:00','30','2021020509535726','2021-02-05 09:59:12',4),
-(81,'sambutan','01:00:00','01:01:00','1','2021020511262378','2021-02-05 11:26:38',1),
-(82,'doa ','01:01:00','01:31:00','30','2021020511262378','2021-02-05 11:26:41',2),
-(83,'break','01:31:00','02:01:00','30','2021020511262378','2021-02-05 11:26:44',3),
-(96,'okedfdfdfdf&nbsp;<br />\n<strong>oke </strong>lah','08:30:00','08:50:00','20','2021020511271153','2021-02-05 19:29:52',1),
-(97,'<span style=\"color:#e74c3c\">doa</span>','09:50:00','11:10:00','80','2021020511271153','2021-02-05 19:30:12',4),
-(98,'makan<br />\n<strong>siang</strong> ah','11:10:00','11:40:00','30','2021020511271153','2021-02-05 19:30:20',5),
-(99,'doa sdsdsdsd','09:20:00','09:50:00','30','2021020511271153','2021-02-05 20:33:31',3),
-(100,'sss sepertinyasss seper<span style=\"color:#16a085\">tinyasss seper</span>tinyasss sepertinyasss sepertinya','08:50:00','09:20:00','30','2021020511271153','2021-02-09 14:42:54',2);
+/*Table structure for table `data_alumni` */
+
+DROP TABLE IF EXISTS `data_alumni`;
+
+CREATE TABLE `data_alumni` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(250) DEFAULT NULL,
+  `jk` varchar(1) DEFAULT NULL,
+  `hp` varchar(15) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `alamat` varchar(250) DEFAULT NULL,
+  `id_goldar` int(11) DEFAULT NULL,
+  `id_penghasilan` int(11) DEFAULT NULL,
+  `id_kelas_1` int(11) DEFAULT NULL,
+  `id_kelas_2` int(11) DEFAULT NULL,
+  `id_kelas_3` int(11) DEFAULT NULL,
+  `id_tahun` int(11) DEFAULT NULL,
+  `sts_pekerjaan` tinyint(4) DEFAULT 1 COMMENT '1=sudah bekerja 2=belum',
+  `id_pekerjaan` int(11) DEFAULT NULL,
+  `sts_menikah` tinyint(4) DEFAULT NULL COMMENT '1=blm kawin 2=sudah 3=cerai',
+  `jml_anak` int(11) DEFAULT NULL,
+  `_cdate` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `data_alumni` */
+
+/*Table structure for table `data_informasi` */
+
+DROP TABLE IF EXISTS `data_informasi`;
+
+CREATE TABLE `data_informasi` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ji` tinyint(4) DEFAULT 1 COMMENT '1= berita 2=event 3=loker',
+  `judul` varchar(250) DEFAULT NULL,
+  `isi` text DEFAULT NULL,
+  `tgl` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `data_informasi` */
 
 /*Table structure for table `main_konfig` */
 
@@ -191,12 +123,12 @@ insert  into `main_konfig`(`id_konfig`,`nama`,`value`) values
 (6,'Client Name','TNI AL'),
 (8,'Product By','#'),
 (7,'Aplication Name','ALUMNI93'),
-(9,'Copyright','alumni'),
+(9,'Copyright','grims'),
 (10,'Record log','2000'),
 (11,'Version','DEV 1.0.0'),
 (12,'Power',''),
-(13,'Title Name','alumni'),
-(14,'Header Name','alumni');
+(13,'Title Name','GRIMS'),
+(14,'Header Name','GRIMS');
 
 /*Table structure for table `main_level` */
 
@@ -329,14 +261,14 @@ insert  into `main_log`(`id_log`,`id_admin`,`nama_user`,`table_updated`,`aksi`,`
 (87,14,'Mr.Cepi','admin','Login','2021-02-09 13:22:09'),
 (88,14,'Mr.Cepi','admin','Login','2021-02-10 10:11:44'),
 (89,2,'IRONMAN','admin','Login','2021-02-11 16:05:11'),
-(90,14,'Mr.Cepi','admin','Login','2021-02-12 07:54:57'),
-(91,14,'Mr.Cepi','admin','Login','2021-02-15 09:35:05'),
-(92,14,'Mr.Cepi','admin','Login','2021-02-16 06:59:08'),
-(93,14,'Mr.Cepi','admin','Login','2021-02-16 12:52:05'),
-(94,14,'Mr.Cepi','admin','Login','2021-02-16 13:17:38'),
-(95,2,'IRONMAN','admin','Login','2021-02-16 13:26:23'),
-(96,14,'Mr.Cepi','admin','Login','2021-02-16 13:28:49'),
-(97,14,'Mr.Cepi','admin','Login','2021-02-16 17:27:50');
+(90,14,'Mr.Cepi','admin','Login','2021-02-16 20:49:31'),
+(91,14,'Mr.Cepi','admin','Login','2021-02-16 22:00:01'),
+(92,14,'Mr.Cepi','admin','Login','2021-02-16 22:03:05'),
+(93,14,'Mr.Cepi','admin','Login','2021-02-17 06:04:30'),
+(94,14,'Mr.Cepi','admin','Login','2021-02-17 06:04:56'),
+(95,14,'Mr.Cepi','admin','Login','2021-02-17 09:45:47'),
+(96,14,'Mr.Cepi','admin','Login','2021-02-17 14:37:02'),
+(97,14,'Mr.Cepi','admin','Login','2021-02-17 14:37:26');
 
 /*Table structure for table `main_menu` */
 
@@ -400,6 +332,24 @@ insert  into `pengaturan`(`id`,`title`,`val`) values
 (1,'direktory_upload','F:/XAMPP/htdocs/dir_pandu/'),
 (2,'frontend download','http://localhost/pandu-acara/download');
 
+/*Table structure for table `tr_goldar` */
+
+DROP TABLE IF EXISTS `tr_goldar`;
+
+CREATE TABLE `tr_goldar` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_goldar` */
+
+insert  into `tr_goldar`(`id`,`nama`) values 
+(1,'A'),
+(2,'B'),
+(3,'AB'),
+(4,'O');
+
 /*Table structure for table `tr_jenis_acara` */
 
 DROP TABLE IF EXISTS `tr_jenis_acara`;
@@ -421,6 +371,116 @@ insert  into `tr_jenis_acara`(`id`,`id_acara`,`jenis`,`acara`) values
 (4,2,'Dalam Negeri','Kunjungan kerja'),
 (5,3,'Dalam Negeri','Kunjungan kerja'),
 (6,4,'TAMARA','Kunjungan kerja');
+
+/*Table structure for table `tr_jp` */
+
+DROP TABLE IF EXISTS `tr_jp`;
+
+CREATE TABLE `tr_jp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_jp` */
+
+insert  into `tr_jp`(`id`,`nama`) values 
+(1,'SMA'),
+(2,'D2'),
+(3,'D3'),
+(4,'D4'),
+(5,'S1'),
+(6,'S2'),
+(7,'S3');
+
+/*Table structure for table `tr_kelas` */
+
+DROP TABLE IF EXISTS `tr_kelas`;
+
+CREATE TABLE `tr_kelas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_tingkat` int(11) DEFAULT NULL,
+  `nama_kelas` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_kelas` */
+
+insert  into `tr_kelas`(`id`,`id_tingkat`,`nama_kelas`) values 
+(1,1,'IPA'),
+(2,1,'IPS');
+
+/*Table structure for table `tr_pekerjaan` */
+
+DROP TABLE IF EXISTS `tr_pekerjaan`;
+
+CREATE TABLE `tr_pekerjaan` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_pekerjaan` */
+
+insert  into `tr_pekerjaan`(`id`,`nama`) values 
+(1,'Wiraswasta'),
+(2,'Wirausaha'),
+(3,'Pedagang'),
+(4,'Petani'),
+(5,'Nelayan'),
+(6,'Pegawai Negeri (PNS)'),
+(7,'TNI'),
+(8,'POLRI'),
+(9,'Dokter'),
+(10,'Guru / Pengajar'),
+(11,'Tidak Bekerja'),
+(12,'TKI/TKW');
+
+/*Table structure for table `tr_penghasilan` */
+
+DROP TABLE IF EXISTS `tr_penghasilan`;
+
+CREATE TABLE `tr_penghasilan` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `penghasilan` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_penghasilan` */
+
+insert  into `tr_penghasilan`(`id`,`penghasilan`) values 
+(1,'< 1.000.000'),
+(2,'1.000.000 - 2.500.000'),
+(3,'2.500.000 - 5.000.000'),
+(4,'> 5.000.000');
+
+/*Table structure for table `tr_tahun` */
+
+DROP TABLE IF EXISTS `tr_tahun`;
+
+CREATE TABLE `tr_tahun` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tahun` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tr_tahun` */
+
+insert  into `tr_tahun`(`id`,`tahun`) values 
+(1,1993),
+(2,1994),
+(3,1995),
+(7,1996),
+(8,1997),
+(9,1998),
+(10,1999),
+(12,1997),
+(13,1997),
+(14,1997),
+(15,1997),
+(19,1994),
+(20,2000),
+(21,2001);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

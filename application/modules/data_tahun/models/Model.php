@@ -44,7 +44,7 @@ class Model extends CI_Model
 		return $this->db->get()->num_rows();
 	}
 	
-	function insert(){
+	function insert(){ 
 		$form	=	$this->input->post("f");
 		$this->db->set($form);
 		return $this->db->insert("tr_tahun");
