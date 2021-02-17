@@ -14,7 +14,7 @@
                         <input type="text" class="text search-input" placeholder="Type here to search...">
                         <a class="search-link" href="<?php echo base_url() ?>assets/#"><i class="ri-search-line"></i></a>
                      </form>-->
-					 <h4><?php echo isset($breadcrumb)?($breadcrumb):"Not found!"?></h4>
+					 <h4 id='title'><?php echo isset($header)?($header):$this->m_reff->m_konfig(7)?></h4>
                   </div>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="ri-menu-3-line"></i>
@@ -29,10 +29,10 @@
                      <ul class="navbar-nav ml-auto navbar-list">
                          
                         <li class="nav-item iq-full-screen">
-                           <a href="<?php echo base_url() ?>assets/#" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i></a>
+                           <a href="javascript:void(0)" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i> Pesan</a>
                         </li>
                         <li class="nav-item">
-                           <a href="<?php echo base_url() ?>assets/#" class="search-toggle iq-waves-effect">
+                           <a href="javascript:void(0)" class="search-toggle iq-waves-effect">
                                  <i class="ri-notification-3-fill"></i>
                                  <span class="bg-danger dots"></span>
                               </a>

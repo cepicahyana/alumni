@@ -32,6 +32,8 @@
 	<link rel="stylesheet" href="<?php echo base_url()?>plug/toast/jquery.toast.css"/>
    <link href="<?php echo base_url()?>plug/js/alertify/css/alertify.css" rel="stylesheet"/>
 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>datatables/datatables.min.css"/> 
+<script type="text/javascript" src="<?php echo base_url()?>datatables/datatables.min.js"></script>
    </head>
    <body>
       <!-- loader Start 
@@ -71,7 +73,7 @@
            <?php echo $this->load->view("temp/top_menu");?>
          <!-- TOP Nav Bar END -->
             <div class="container-fluid" id="page-body">
-                 
+                 <?php echo isset($konten)?($this->load->view($konten)):"page not found!";?>
                </div>
          </div>
       <!-- Footer -->
@@ -82,23 +84,15 @@
       <!-- Wrapper END -->
       
       <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
       <script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
       <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-      <!-- Appear JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/jquery.appear.js"></script>
-      <!-- Countdown JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/countdown.min.js"></script>
-      <!-- Counterup JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/waypoints.min.js"></script>
-      <script src="<?php echo base_url() ?>assets/js/jquery.counterup.min.js"></script>
-      <!-- Wow JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/wow.min.js"></script>
-      <!-- Apexcharts JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/apexcharts.js"></script>
-      <!-- Slick JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/slick.min.js"></script>
+      <!-- Appear JavaScript --> 
+      <!-- Countdown JavaScript --> 
+      <!-- Counterup JavaScript --> 
+      <!-- Wow JavaScript --> 
+      <!-- Apexcharts JavaScript --> 
+      <!-- Slick JavaScript --> 
       <!-- Select2 JavaScript -->
       <script src="<?php echo base_url() ?>assets/js/select2.min.js"></script>
       <!-- Owl Carousel JavaScript --> 
@@ -106,26 +100,25 @@
       <script src="<?php echo base_url() ?>assets/js/jquery.magnific-popup.min.js"></script>
       <!-- Smooth Scrollbar JavaScript -->
       <script src="<?php echo base_url() ?>assets/js/smooth-scrollbar.js"></script>
-      <!-- lottie JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/lottie.js"></script>
+      <!-- lottie JavaScript --> 
       <!-- am core JavaScript -->
       <script src="<?php echo base_url() ?>assets/js/core.js"></script>
       <!-- am charts JavaScript --> 
       <script src="<?php echo base_url() ?>assets/js/animated.js"></script>
-      <!-- am kelly JavaScript --> 
-    
-      <!-- Chart Custom JavaScript -->
-      <script src="<?php echo base_url() ?>assets/js/chart-custom.js"></script>
+      <!-- am kelly JavaScript -->   
+      <!-- lottie JavaScript --> 
+      <script src="<?php echo base_url();?>assets/js/chart-custom.js"></script>
+     
       <!-- Custom JavaScript -->
       <script src="<?php echo base_url() ?>assets/js/custom.js"></script>
    </body>
 <script src="<?php echo base_url();?>plug/js/alertify/alertify.js"></script>
 <script src="<?php echo base_url();?>assets/js/script.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>plug/toast/jquery.toast.js"></script>
-
+<!--
 <script src="<?php echo base_url()?>assets/ckeditor/ckeditor.js"></script>
 <script src="<?php echo base_url()?>assets/ckeditor/js/sample.js"></script> 
-
+-->
 
 <script type="text/javascript">
 	$(document).off("click",".menuclick").on("click",".menuclick",function (event, messages) {
@@ -134,6 +127,7 @@
 		var url = $(this).attr("href");
 		var title = $(this).attr("title");
 		var target = $(this).attr("target");
+		var ref = $(this).attr("ref");
 	
 		if(url=="<?php echo base_url()?>login/logout")
 		{
@@ -144,14 +138,21 @@
 			window.open(url, '_blank');
 			return false;
 		}  
+	//	$("li").removeClass('active');
 		$(this).parent().addClass('active').siblings().removeClass('active');
+		 $(".ref").removeClass('active');
+		 if(ref){
+			$(".ref").removeClass('main-active'); 
+		 }
+	 	 //$("#ui-elements").removeClass('show');
+		 $("#"+ref).addClass('active main-active');
 		$("#page-body").html('<div class="cell preloader5 loader-block"><div class="circle-5 l"></div><div class="circle-5 m"></div><div class="circle-5 r"></div></div>');
 		 
 		$.post(url,{ajax:"yes"},function(data){
 			$('.modal.aside').remove();
 			history.replaceState(title, title, url);
 			$(".uri").val(url);
-			$('title').html(title);
+			$('#title').html(title);
 			$("#page-body").html(data); 
 		})
 	})
