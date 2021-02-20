@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -59,7 +59,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] =  array('database','session','pagination','tanggal','konversi','form','email','encryption'); //grocery_CRUD
+$autoload['libraries'] =  array('database', 'session', 'form_validation', 'pagination', 'tanggal', 'konversi', 'form', 'email', 'encryption'); //grocery_CRUD
 
 /*
 | -------------------------------------------------------------------
@@ -90,7 +90,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','html','file','form','security','xss','slug');
+$autoload['helper'] = array('url', 'html', 'file', 'form', 'security', 'xss', 'slug');
 
 /*
 | -------------------------------------------------------------------
@@ -133,4 +133,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('m_konfig','m_reff','m_total');
+$autoload['model'] = array('m_konfig', 'm_reff', 'm_total');
