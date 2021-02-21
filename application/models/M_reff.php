@@ -14,7 +14,10 @@ function mobile()
 						{ return true;}else{ return false; }
                    
 	}
-	
+	function m_konfig($id){
+			$return=$this->db->get_where("main_konfig",array("id_konfig"=>$id))->row();
+		return isset($return->value)?($return->value):"";
+	}
 	function idu()
 	{
 		return $this->session->userdata("id");

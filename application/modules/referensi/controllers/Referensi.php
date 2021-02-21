@@ -45,6 +45,7 @@ class Referensi extends CI_Controller {
 			echo	$this->load->view("side");
 		}else{
 			$data['konten']="side";
+			$data['header']="side";
 			$this->_template($data);
 		}
 	}
