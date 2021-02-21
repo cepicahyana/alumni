@@ -63,19 +63,26 @@ class Data_alumni extends CI_Controller
 		echo json_encode($output);
 	}
 	function form_tambah()
+
 	{
-		$this->load->view("form_tambah");
+		$data['pekerjaan'] = $this->mdl->getPekerjaan();
+		$data['goldar'] = $this->mdl->getGoldar();
+		$data['penghasilan'] = $this->mdl->getPenghasilan();
+		$data['tahunLulus'] = $this->mdl->getTahunLulus();
+		$this->load->view("form_tambah", $data);
 	}
 	function form_edit()
 	{
 		$data['pekerjaan'] = $this->mdl->getPekerjaan();
 		$data['goldar'] = $this->mdl->getGoldar();
 		$data['penghasilan'] = $this->mdl->getPenghasilan();
+		$data['tahunLulus'] = $this->mdl->getTahunLulus();
 		$this->load->view("form_edit", $data);
 	}
 
 	function insert()
 	{
+
 		echo $this->mdl->insert();
 	}
 	function hapus()

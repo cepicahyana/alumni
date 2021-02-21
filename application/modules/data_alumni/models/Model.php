@@ -48,7 +48,10 @@ class Model extends CI_Model
 	function insert()
 	{
 		$form	=	$this->input->post("f");
+		$pass   =   $this->input->post("password");
+		$md5    =   md5($pass);
 		$this->db->set($form);
+		$this->db->set("password", $md5);
 		return $this->db->insert("data_alumni");
 	}
 	function update()
@@ -70,18 +73,30 @@ class Model extends CI_Model
 		return $this->db->delete("data_alumni");
 	}
 
+	// getPekerjaan
 	function getPekerjaan()
 	{
 		return  $this->db->get('tr_pekerjaan')->result();
 	}
 
+
+
+	// getGoldar 
 	function getGoldar()
 	{
 		return  $this->db->get('tr_goldar')->result();
 	}
 
+
+	// getPenghasilan 
 	function getPenghasilan()
 	{
 		return  $this->db->get('tr_penghasilan')->result();
+	}
+
+	// getTahunLulus 
+	function getTahunLulus()
+	{
+		return $this->db->get('tr_tahun')->result();
 	}
 }

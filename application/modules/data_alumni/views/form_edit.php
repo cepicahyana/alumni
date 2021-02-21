@@ -32,6 +32,12 @@ $db	=	$this->db->get("data_alumni")->row();
 						<input type="text" name="f[nama_belakang]" value="<?php echo $db->nama_belakang ?>" required class="form-controls">
 					</div>
 
+					<!-- email -->
+					<label class="col-sm-5 col-form-label">Email </label>
+					<div class="col-sm-6">
+						<input type="text" name="f[email]" value="<?php echo $db->email ?>" required class="form-controls">
+					</div>
+
 					<!-- password  -->
 					<label class="col-sm-5 col-form-label">Password </label>
 					<div class="col-sm-6">
@@ -43,13 +49,12 @@ $db	=	$this->db->get("data_alumni")->row();
 					<div class="col-sm-6">
 
 						<select name="f[jk]" value="<?php echo $db->jk ?>" required class="form-controls">
-							<option value="">Jenis Kelamin</option>
 							<option value="L">Laki-Laki</option>
 							<option value="P">Perempuan</option>
 						</select>
 					</div>
 
-					<!-- jenis kelamin  -->
+					<!-- no tlp  -->
 					<label class="col-sm-5 col-form-label">Nomer Telepon</label>
 					<div class="col-sm-6">
 						<input type="text" name="f[hp]" value="<?php echo $db->hp ?>" required class="form-controls">
@@ -59,6 +64,19 @@ $db	=	$this->db->get("data_alumni")->row();
 					<label class="col-sm-5 col-form-label">Alamat</label>
 					<div class="col-sm-6">
 						<input type="text" name="f[alamat]" value="<?php echo $db->alamat ?>" required class="form-controls">
+					</div>
+
+					<!-- tahun lulus  -->
+					<label class="col-sm-5 col-form-label">Tahun Lulus</label>
+					<div class="col-sm-6">
+						<?php
+						$dttahunlulus = array();
+						foreach ($tahunLulus as $tl) :
+							$dttahunlulus[$tl->id] = $tl->tahun;
+						endforeach;
+
+						echo form_dropdown("f[id_tahun]", $dttahunlulus, $db->id_tahun, "class='form-control' ") ?>
+
 					</div>
 
 					<!-- goldar  -->
@@ -104,8 +122,8 @@ $db	=	$this->db->get("data_alumni")->row();
 							$dtpenghasilan[$pg->id] = $pg->penghasilan;
 						endforeach;
 						echo form_dropdown("f[id_penghasilan]", $dtpenghasilan, $db->id_penghasilan, "class='form-control' ") ?>
-
 					</div>
+
 					<!-- status Pernikahan  -->
 					<label class="col-sm-5 col-form-label">Status Pernikahan</label>
 					<div class="col-sm-6">

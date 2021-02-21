@@ -29,7 +29,7 @@
         <div class="row py-5 mt-0 align-items-center">
             <!-- For Demo Purpose -->
             <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                <img src="<?php echo base_url() ?>assets/images/register/registrasi.PNG" alt="" class="img-fluid mb-3 d-none d-md-block">
+                <img src="<?php echo base_url() ?>assets/images/register/reg.PNG" alt="" class="img-fluid mb-3 d-none d-md-block">
                 <h1>Buat Akun Anda </h1>
 
             </div>
@@ -138,7 +138,7 @@
 
                         <!-- Submit Button -->
                         <div class="form-group col-lg-12 mx-auto mb-2">
-                            <a href="#" onclick="javascript:submitForm('formSubmit')" id="btn-grad" class="btn btn-success btn-block py-2">
+                            <a href="#" onclick="javascript:submitForm('formSubmit')" id="btn-grad" class="btn btn-primary btn-block py-2">
                                 <span class="font-weight-bold" class="">Daftar</span>
 
                             </a>
