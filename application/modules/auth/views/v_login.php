@@ -36,7 +36,7 @@
                                             <div class="row form-footer">
                                                 <div class="col-md-6 forget-paswd">
                                                     <p>Belum punya akun?</p>
-                                                    <a href="<?php echo base_url() ?>register" style="color:#0000FF">Daftar</a>
+                                                    <a href="<?php echo base_url() ?>register" style="color:#0000FF">Daftar Disini</a>
                                                 </div>
 
                                                 <div class="col-md-6 button-div">
