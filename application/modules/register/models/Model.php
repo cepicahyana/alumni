@@ -19,6 +19,7 @@ class Model extends CI_Model
     {
         $email  =   $this->input->post("f[email]");
         $pass   =   $this->input->post("password");
+        $username = $this->input->post("f[email]");
         $md5    =   md5($pass);
         $cek    = $this->cek_pass($email, $md5);
         if ($cek) {
@@ -29,6 +30,7 @@ class Model extends CI_Model
         $form    =    $this->input->post("f");
         $this->db->set($form);
         $this->db->set("password", $md5);
+        $this->db->set("username", $username);
         return $this->db->insert("data_alumni");
     }
 }

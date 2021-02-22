@@ -60,6 +60,39 @@
 						<input type="text" name="f[alamat]" required class="form-controls">
 					</div>
 
+					<!-- kelas 1  -->
+					<label class="col-sm-5 col-form-label">Kelas 1</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_1]", $dtkelas, "", "class='form-control' ") ?>
+					</div>
+
+					<!-- kelas 2  -->
+					<label class="col-sm-5 col-form-label">Kelas 2</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_2]", $dtkelas, "", "class='form-control' ") ?>
+					</div>
+
+					<!-- kelas 3  -->
+					<label class="col-sm-5 col-form-label">Kelas 3</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_3]", $dtkelas, "", "class='form-control' ") ?>
+					</div>
+
 					<!-- tahun lulus  -->
 					<label class="col-sm-5 col-form-label">Tahun Lulus</label>
 					<div class="col-sm-6">
@@ -68,10 +101,10 @@
 						foreach ($tahunLulus as $tl) :
 							$dttahunlulus[$tl->id] = $tl->tahun;
 						endforeach;
-
 						echo form_dropdown("f[id_tahun]", $dttahunlulus, "", "class='form-control' ") ?>
-
 					</div>
+
+
 
 					<!-- goldar  -->
 					<label class="col-sm-5 col-form-label">Golongan Darah</label>
@@ -131,7 +164,7 @@
 					<!-- jumlah anak  -->
 					<label class="col-sm-5 col-form-label">Jumlah Anak</label>
 					<div class="col-sm-6">
-						<input type="text" name="f[jml_anak]"  required class="form-controls">
+						<input type="text" name="f[jml_anak]" required class="form-controls">
 					</div>
 
 				</div>

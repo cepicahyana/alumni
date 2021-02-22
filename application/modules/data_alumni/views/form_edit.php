@@ -66,6 +66,39 @@ $db	=	$this->db->get("data_alumni")->row();
 						<input type="text" name="f[alamat]" value="<?php echo $db->alamat ?>" required class="form-controls">
 					</div>
 
+					<!-- kelas 1  -->
+					<label class="col-sm-5 col-form-label">Kelas 1</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_1]", $dtkelas, $db->id_kelas_1, "class='form-control' ") ?>
+					</div>
+
+					<!-- kelas 2  -->
+					<label class="col-sm-5 col-form-label">Kelas 2</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_2]", $dtkelas, $db->id_kelas_2, "class='form-control' ") ?>
+					</div>
+
+					<!-- kelas 3  -->
+					<label class="col-sm-5 col-form-label">Kelas 3</label>
+					<div class="col-sm-6">
+						<?php
+						$dtkelas = array();
+						foreach ($kelas as $k) :
+							$dtkelas[$k->id] = $k->nama_kelas;
+						endforeach;
+						echo form_dropdown("f[id_kelas_3]", $dtkelas, $db->id_kelas_3, "class='form-control' ") ?>
+					</div>
+
 					<!-- tahun lulus  -->
 					<label class="col-sm-5 col-form-label">Tahun Lulus</label>
 					<div class="col-sm-6">

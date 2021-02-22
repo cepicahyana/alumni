@@ -21,16 +21,15 @@ class Register extends CI_Controller
 	function insert()
 	{
 
-		$this->form_validation->set_rules('f[nama_depan]', 'Nama Depan', 'required');
-		$this->form_validation->set_rules('f[nama_belakang]', 'Nama Belakang', 'required');
-		$this->form_validation->set_rules('f[username]', 'Username', 'required');
-		// $this->form_validation->set_rules('password', 'Password', 'required|matches[confirm_password]');
-		$this->form_validation->set_rules('f[email]', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('f[nama_depan]', 'nama depan', 'required');
+		$this->form_validation->set_rules('f[nama_belakang]', 'nama belakang', 'required');
+		$this->form_validation->set_rules('password', 'katasandi', 'required');
+		$this->form_validation->set_rules('confirm_password', 'konfirmasi katasandi', 'required|matches[password]');
+		$this->form_validation->set_rules('f[email]', 'email', 'required|valid_email');
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = validation_errors();
 			echo json_encode(validation_errors());
-			// echo $this->load->view("register");
 		} else {
 			$data = $this->mdl->insert();
 			echo json_encode($data);

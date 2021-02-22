@@ -1,20 +1,76 @@
  <div class="row   " id="area_lod">
- 	<div class="card-body  iq-card" id="area_lod">
+
+ 	<div class="card-body  iq-card " id="area_lod">
+ 		<div class="row col-md-12">
+ 			<div class="col-md-2 mb-3">
+ 				<?php
+					$dtkelas[null] = "--pilih kelas--";
+					foreach ($kelas as $k) :
+						$dtkelas[$k->id] = $k->nama_kelas;
+					endforeach;
+					echo form_dropdown("kelas", $dtkelas, "", "class='form-control' onchange='reload_table()'") ?>
+ 			</div>
+
+ 			<div class="col-md-2 mb-3">
+ 				<?php
+					$dtTahunLulus[null] = "--pilih tahun--";
+					foreach ($tahunLulus as $thn) :
+						$dtTahunLulus[$thn->id] = $thn->tahun;
+					endforeach;
+					echo form_dropdown("thnLulus", $dtTahunLulus, "", "class='form-control' onchange='reload_table()' ") ?>
+ 			</div>
+
+ 			<div class="col-md-3 mb-3">
+ 				<?php
+					$dtPekerjaan[null] = "--pilih pekerjaan--";
+					foreach ($pekerjaan as $pkj) :
+						$dtPekerjaan[$pkj->id] = $pkj->nama;
+					endforeach;
+					echo form_dropdown("pekerjaan", $dtPekerjaan, "", "class='form-control' onchange='reload_table()' ") ?>
+ 			</div>
+
+
+ 			<div class="col-md-2 mb-3">
+ 				<?php
+					$dtJk[null] = "--pilih gender--";
+					$dtJk["L"] = "Laki-Laki";
+					$dtJk["P"] = "Perempuan";
+
+					echo form_dropdown("jk", $dtJk, "", "class='form-control' onchange='reload_table()' ") ?>
+ 			</div>
+ 			<div class="col-md-2 mb-3">
+ 				<?php
+					$dtgoldar[null] = "--pilih goldar--";
+					foreach ($goldar as $g) :
+						$dtgoldar[$g->id] = $g->nama;
+					endforeach;
+					echo form_dropdown("goldar", $dtgoldar, "", "class='form-control' onchange='reload_table()'") ?>
+ 			</div>
+ 		</div>
+
  		<div class="col-md-12 table-responsive">
  			<table id="table" class="entry   table-sm" style="width:100%">
  				<thead>
  					<th width="30px">NO</th>
+ 					<!-- <th>USERNAME</th> -->
  					<th>NAMA ALUMNI</th>
-
+ 					<th>JK</th>
+ 					<th>TELEPON</th>
+ 					<th>EMAIL</th>
+ 					<th>ALAMAT</th>
+ 					<th>GOLDAR</th>
+ 					<!-- <th>PENGHASILAN</th> -->
+ 					<th>KELAS</th>
+ 					<th>TAHUN LULUS</th>
+ 					<th>PEKERJAAN</th>
+ 					<th>JUMLAH ANAK</th>
+ 					<th>STATUS PERNIKAHAN</th>
  					<th>ACTION</th>
  				</thead>
  			</table>
  		</div>
  	</div>
  </div>
-
-
-
 
  <script type="text/javascript">
  	var save_method; //for save method string
@@ -64,6 +120,7 @@
  				},
  				className: '  font14 btn btn-sm ti-plus bg-teal  '
  			},
+
  		],
 
  		// Load data for the table's content from an Ajax source
@@ -71,7 +128,11 @@
  			"url": "<?php echo site_url('data_alumni/getData'); ?>",
  			"type": "POST",
  			"data": function(data) {
- 				//  data.pencarian= $('#pencarian').val();
+ 				data.jk = $('[name="jk"]').val();
+ 				data.thnLulus = $('[name="thnLulus"]').val();
+ 				data.kelas = $('[name="kelas"]').val();
+ 				data.pekerjaan = $('[name="pekerjaan"]').val();
+ 				data.goldar = $('[name="goldar"]').val();
  			},
  			beforeSend: function() {
  				loading("area_lod");

@@ -21,8 +21,13 @@ class Data_alumni extends CI_Controller
 	{
 		$ajax = $this->input->get_post("ajax");
 		if ($ajax == "yes") {
+
 			echo $this->load->view("index");
 		} else {
+			$data['kelas'] = $this->mdl->getKelas();
+			$data['pekerjaan'] = $this->mdl->getPekerjaan();
+			$data['tahunLulus'] = $this->mdl->getTahunLulus();
+			$data['goldar'] = $this->mdl->getGoldar();
 			$data['header'] = "Data Alumni";
 			$data['konten'] = "index";
 			$this->_template($data);
@@ -35,6 +40,33 @@ class Data_alumni extends CI_Controller
 		$no = $_POST['start'];
 		$no = $no + 1;
 		foreach ($list as $dataDB) {
+
+			// goldar id
+			$goldar = $this->mdl->getGoldarByid($dataDB->id_goldar);
+
+			// penghasilan id
+			$penghasilan = $this->mdl->getPenghasilanByid($dataDB->id_penghasilan);
+
+			// pekerjaan id
+			$pekerjaan = $this->mdl->getPekerjaanByid($dataDB->id_pekerjaan);
+
+			// kelas id
+			$kelas = $this->mdl->getKelasByid($dataDB->id_kelas_3);
+
+			// tahun lulus 
+			$thnLulus = $this->mdl->getTahunLulusByid($dataDB->id_tahun);
+
+			// status pernikahan 
+			if ($dataDB->sts_menikah == 1) {
+				$stsMenikah = "Belum Menikah";
+			} else if ($dataDB->sts_menikah == 2) {
+				$stsMenikah = "Sudah Menikah";
+			} else {
+				$stsMenikah = "Cerai";
+			}
+
+
+
 			$id	= $dataDB->id;
 			$action		 =	'<div class="btn-group" role="group"  >
 								 <button onclick="hapus(`' . $dataDB->id . '`)" type="button" class="btn bg-grey  btn-sm waves-effect waves-light ti-trash"> <i title="hapus" class="ri-delete-bin-7-fill"></i>   </button>
@@ -43,7 +75,19 @@ class Data_alumni extends CI_Controller
                   </div>';
 			$row = array();
 			$row[] = $no++;
+			// $row[] = $dataDB->username;
 			$row[] = $dataDB->nama_depan . " " . $dataDB->nama_belakang;
+			$row[] = $dataDB->jk;
+			$row[] = $dataDB->hp;
+			$row[] = $dataDB->email;
+			$row[] = $dataDB->alamat;
+			$row[]	= isset($goldar->nama) ? ($goldar->nama) : "";
+			// $row[]	= isset($penghasilan->penghasilan) ? ($penghasilan->penghasilan) : "";
+			$row[]	= isset($kelas->nama_kelas) ? ($kelas->nama_kelas) : "";
+			$row[]	= isset($thnLulus->tahun) ? ($thnLulus->tahun) : "";
+			$row[]	= isset($pekerjaan->nama) ? ($pekerjaan->nama) : "";
+			$row[] = $dataDB->jml_anak;
+			$row[] = $stsMenikah;
 			$row[] = $action;
 
 			//add html for action
@@ -66,6 +110,7 @@ class Data_alumni extends CI_Controller
 
 	{
 		$data['pekerjaan'] = $this->mdl->getPekerjaan();
+		$data['kelas'] = $this->mdl->getKelas();
 		$data['goldar'] = $this->mdl->getGoldar();
 		$data['penghasilan'] = $this->mdl->getPenghasilan();
 		$data['tahunLulus'] = $this->mdl->getTahunLulus();
@@ -73,6 +118,7 @@ class Data_alumni extends CI_Controller
 	}
 	function form_edit()
 	{
+		$data['kelas'] = $this->mdl->getKelas();
 		$data['pekerjaan'] = $this->mdl->getPekerjaan();
 		$data['goldar'] = $this->mdl->getGoldar();
 		$data['penghasilan'] = $this->mdl->getPenghasilan();

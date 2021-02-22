@@ -38,8 +38,13 @@
             <!-- Registeration Form -->
             <div class="col-md-7 col-lg-6 ml-auto">
                 <form id="formSubmit" action="javascript:submitForm('formSubmit')" method="post" url="<?php echo base_url() ?>register/insert">
+
+                    <div id="hasilvalid" class="input-group col-lg-12 mb-4"></div>
+
                     <div class="row">
-                        <div id="hasilvalid" class="input-group-prepend"></div>
+
+
+
                         <!-- First Name -->
                         <div class="input-group col-lg-6 mb-4">
                             <div class="input-group-prepend">
@@ -61,14 +66,16 @@
                         </div>
 
                         <!-- Username -->
-                        <div class="input-group col-lg-12 mb-4">
+                        <!-- <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white px-4 border-md border-right-0">
                                     <i class="fas fa-user-plus"></i>
                                 </span>
                             </div>
                             <input id="NamaPengguna" type="username" name="f[username]" placeholder="Nama Pengguna" class="form-control bg-white border-left-0 border-md">
-                        </div>
+                        </div> -->
+
+
                         <!-- Email Address -->
                         <div class="input-group col-lg-12 mb-4">
                             <div class="input-group-prepend">
@@ -143,9 +150,6 @@
 
                             </a>
                         </div>
-
-
-
                         <!-- Already Registered -->
                         <div class="text-center w-100">
                             <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url('page/c_login') ?>" class="text-primary ml-2">Login</a></p>
@@ -163,41 +167,10 @@
 
 </html>
 
-<!-- <script>
-    function submitForm(id) {
-        console.log("ini", id)
-        var form = $("#" + id);
-        var link = $(form).attr("url");
 
-        $.ajax({
-            url: link,
-            data: $(form).serialize(),
-            type: "POST",
-            dataType: "JSON",
-
-            beforeSend: function() {
-                console.log("masuk beforesend")
-
-            },
-            success: function(data) {
-                console.log("inidata", data)
-                console.log("masuk succes")
-                if (data["gagal"] == true) {
-                    alert(data["info"]);
-
-                    console.log("data gagal")
-                } else {
-                    window.location.href = "<?php echo base_url() ?>login"
-                    console.log("sukses")
-                }
-
-            }
-        });
-    };
-</script> -->
 <script>
     function submitForm(id) {
-
+        $("#hasilvalid").html('');
         console.log("ini", id)
         var form = $("#" + id);
         var link = $(form).attr("url");
@@ -217,7 +190,8 @@
                     window.location.href = "<?php echo base_url() ?>login"
                     console.log("sukses")
                 } else {
-                    $("#hasilvalid").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
+
+                    $("#hasilvalid").html('<div class="alert alert-danger" style="line-height:1px" role="alert">' + data + '</div>');
                 }
 
             }
