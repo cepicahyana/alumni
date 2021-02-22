@@ -152,7 +152,7 @@
                         </div>
                         <!-- Already Registered -->
                         <div class="text-center w-100">
-                            <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url('page/c_login') ?>" class="text-primary ml-2">Login</a></p>
+                            <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url() ?>" class="text-primary ml-2">Login</a></p>
                         </div>
 
                     </div>

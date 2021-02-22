@@ -25,7 +25,7 @@
                <li><a href="<?php echo base_url() ?>profesi"> > Profesi</a></li>
                <li><a href="<?php echo base_url() ?>penghasilan"> > Penghasilan</a></li>
                <li><a href="<?php echo base_url() ?>goldar"> > Golongan darah</a></li>
-               <li><a href="<?php echo base_url() ?>hal_reg"> > Halaman registrasi</a></li>
+               <li><a href="<?php echo base_url() ?>register" ref="referensi" title="Registrasi"> > Halaman registrasi</a></li>
             </ul>
          </li>
          <li class="iq-menu-title"><i class="ri-subtract-line"></i><span> </span></li>

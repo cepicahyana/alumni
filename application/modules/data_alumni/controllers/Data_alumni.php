@@ -21,8 +21,11 @@ class Data_alumni extends CI_Controller
 	{
 		$ajax = $this->input->get_post("ajax");
 		if ($ajax == "yes") {
-
-			echo $this->load->view("index");
+			$data['kelas'] = $this->mdl->getKelas();
+			$data['pekerjaan'] = $this->mdl->getPekerjaan();
+			$data['tahunLulus'] = $this->mdl->getTahunLulus();
+			$data['goldar'] = $this->mdl->getGoldar();
+			echo $this->load->view("index", $data);
 		} else {
 			$data['kelas'] = $this->mdl->getKelas();
 			$data['pekerjaan'] = $this->mdl->getPekerjaan();
