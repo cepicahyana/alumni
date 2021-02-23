@@ -4,7 +4,6 @@
   list-style: none;
 }
 
-
 img {
   max-width: 100%;
 }
@@ -90,7 +89,7 @@ h3,
 h4,
 h5,
 h6 {
-  /* font-family: "Lucida Console", "Courier New", monospace; */
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 strong {
   font-family: "Ubuntu", sans-serif;
@@ -102,12 +101,6 @@ body {
   overflow-x: hidden;
 }
 
-.bg-login {
-  background-image: url(../../images/pagelogin/bgputih.jpg);
-  min-height: 100%;
-  background-size: 100%;
-  padding: 20px;
-}
 .login-card {
   background-color: #fff;
   float: none;
@@ -167,11 +160,15 @@ body {
   background-color: #922c88 !important;
   border-color: #922c88 !important;
 }
+.bg-login {
+  background-image: url("../../images/pagelogin/bgBlue.jpg");
+  min-height: 100%;
+  background-size: 100%;
+  padding: 20px;
+}
 
 @media screen and (max-width: 1100px) {
   .bg-login {
-    /* background-image: url(../../images/pagelogin/bgmobilelogin.png); */
+    background-image: url("../../images/pagelogin/bgputih.jpg");
   }
 }
-
-

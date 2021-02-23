@@ -18,7 +18,7 @@
                 <div class="col-lg-9 col-md-12 login-card">
                     <div class="row">
                         <div class="col-md-5 detail-part ">
-                            <h1 style="color:#276fb7;font-family:Lucida Console;font-weight:800;" id="fontLogin" >Login</h1>
+                            <h1 style="color:#276fb7;font-family:Lucida Console;font-weight:800;" id="fontLogin">Login</h1>
                         </div>
 
                         <div class="col-md-7 logn-part">

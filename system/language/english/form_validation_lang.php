@@ -38,7 +38,7 @@
  */
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$lang['form_validation_required']        = '{field} harus di idi !';
+$lang['form_validation_required']        = '{field} harus di isi !';
 $lang['form_validation_isset']            = 'The {field} field must have a value.';
 $lang['form_validation_valid_email']        = 'format {field} tidak valid';
 $lang['form_validation_valid_emails']        = 'The {field} field must contain all valid email addresses.';

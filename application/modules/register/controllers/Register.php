@@ -23,9 +23,12 @@ class Register extends CI_Controller
 
 		$this->form_validation->set_rules('f[nama_depan]', 'nama depan', 'required');
 		$this->form_validation->set_rules('f[nama_belakang]', 'nama belakang', 'required');
+		$this->form_validation->set_rules('f[hp]', 'no telepon', 'required');
+		$this->form_validation->set_rules('f[jk]', 'jenis kelamin', 'required');
+		$this->form_validation->set_rules('f[email]', 'email', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'katasandi', 'required');
 		$this->form_validation->set_rules('confirm_password', 'konfirmasi katasandi', 'required|matches[password]');
-		$this->form_validation->set_rules('f[email]', 'email', 'required|valid_email');
+
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = validation_errors();
