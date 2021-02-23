@@ -2,7 +2,7 @@
       <ul id="iq-sidebar-toggle" class="iq-menu">
          <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Menu</span></li>
          <li>
-            <a title="Dashboard" href="<?php echo base_url(); ?>dashboard" class="menuclick iq-waves-effect"><i class="ri-hospital-fill"></i><span>Dashboard</span></a>
+            <a title="Dashboard" href="<?php echo base_url(); ?>dashboard" class=" iq-waves-effect"><i class="ri-hospital-fill"></i><span>Dashboard</span></a>
          </li>
 
 
@@ -21,11 +21,11 @@
                <li><a class="menuclick" href="<?php echo base_url() ?>data_alumni" ref="referensi" title="Data Alumni"> > Data Alumni</a></li>
                <li><a class="menuclick" href="<?php echo base_url() ?>data_tahun" ref="referensi" title="Data tahun lulus"> > Tahun lulusan</a></li>
                <li><a class="menuclick" href="<?php echo base_url() ?>data_kelas" ref="referensi" title="Data kelas"> > Data kelas</a></li>
-               <li><a href="<?php echo base_url() ?>jp"> > Jenjang pendidikan</a></li>
-               <li><a href="<?php echo base_url() ?>profesi"> > Profesi</a></li>
-               <li><a href="<?php echo base_url() ?>penghasilan"> > Penghasilan</a></li>
-               <li><a href="<?php echo base_url() ?>goldar"> > Golongan darah</a></li>
-               <li><a href="<?php echo base_url() ?>register" ref="referensi" title="Registrasi"> > Halaman registrasi</a></li>
+               <li><a class="menuclick" href="<?php echo base_url() ?>jp" ref="referensi" title="Jenjang Pendidikan">> Jenjang pendidikan</a></li>
+               <li><a class="menuclick" href="<?php echo base_url() ?>profesi" ref="referensi" title="Profesi">> Profesi</a></li>
+               <li><a class="menuclick" href="<?php echo base_url() ?>penghasilan" ref="referensi" title="Penghasilan"> > Penghasilan</a></li>
+               <li><a class="menuclick" href="<?php echo base_url() ?>goldar" ref="referensi" title="Golongan Darah">> Golongan darah</a></li>
+               <li><a class="menuclick" href="<?php echo base_url() ?>hal_reg" ref="referensi" title="Halaman Registrasi">> Halaman registrasi</a></li>
             </ul>
          </li>
          <li class="iq-menu-title"><i class="ri-subtract-line"></i><span> </span></li>

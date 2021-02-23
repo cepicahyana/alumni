@@ -40,7 +40,52 @@ class Model extends CI_Model
 		$this->_get_datatables_statuskri();
 		return $this->db->get()->num_rows();
 	}
+
+	public function get_data($table)
+	{
+		return $this->db->get($table);
+	}
+
+	public function jml_pendidikan($id)
+	{
+		$this->db->where('id_jp',$id);
+		return $this->db->get("data_alumni")->num_rows();
+	}
+
+	public function jml_goldar($id)
+	{
+		$this->db->where('id_goldar',$id);
+		return $this->db->get("data_alumni")->num_rows();
+	}
+
+	public function jml_penghasilan($id)
+	{
+		$this->db->where('id_penghasilan',$id);
+		return $this->db->get("data_alumni")->num_rows();
+	}
+
+	public function jml_profesi($id)
+	{
+		$this->db->where('id_pekerjaan',$id);
+		return $this->db->get("data_alumni")->num_rows();
+	}
+
+	public function graph()
+	{
+		$data = $this->db->query("SELECT * from tr_goldar");
+		return $data->result();
+	}
+
+	public function jml_alumni()
+	{
+		$this->db->select('1');
+		$this->db->where('status');
+		$query = $this->db->get('data_alumni');
+		$num = $query->num_rows();
+
+	}
 	
+
 
     
 

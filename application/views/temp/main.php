@@ -24,6 +24,9 @@
    <link href='<?php echo base_url() ?>assets/fullcalendar/timegrid/main.css' rel='stylesheet' />
    <link href='<?php echo base_url() ?>assets/fullcalendar/list/main.css' rel='stylesheet' />
 
+   <script src="<?php echo base_url() ?>assets/js/highcharts.js"></script>
+   <script src="<?php echo base_url() ?>assets/js/highcharts-3d.js"></script>
+
    <script src="<?php echo base_url() ?>plug/jquery/jquery.min.js"></script>
    <script src="<?php echo base_url() ?>plug/jqueryform/jquery.form.js"></script>
    <script src="<?php echo base_url() ?>plug/blokui.js"></script>
