@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Feb 2021 pada 07.39
+-- Waktu pembuatan: 23 Feb 2021 pada 11.06
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -56,7 +56,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `level`, `profilename`, `gender`, `profileimg`, `wa`, `email`, `profileaddress`, `ip`, `sts_aktif`, `last_login`, `_cid`, `_ctime`, `_uid`, `_utime`, `lat`, `lng`) VALUES
 (2, 'super', '1b3231655cebb7a1f783eddf27d254ca', 1, 'IRONMAN', 'Male', 'fileadmin_22012021073610.png', '0852 3334 1122', 'robot@mail.net', 'USA', NULL, 1, '2021-02-11 16:05:11', NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'admin', '21232f297a57a5a743894a0e4a801fc3', 2, 'Mr.Cepi', 'Male', 'fileadmin_22012021013555.png', '0852 2096 9224', 'cs@gmail.com', 'Indonesia', NULL, 1, '2021-02-23 13:36:36', NULL, NULL, NULL, NULL, NULL, NULL);
+(14, 'admin', '21232f297a57a5a743894a0e4a801fc3', 2, 'Mr.Cepi', 'Male', 'foto_admin_152254.jpg', '0852 2096 9224', 'cs@gmail.com', 'Indonesia', NULL, 1, '2021-02-23 16:28:42', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -82,6 +82,8 @@ CREATE TABLE `data_alumni` (
   `id_tahun` int(10) UNSIGNED DEFAULT NULL,
   `sts_pekerjaan` tinyint(4) DEFAULT 1 COMMENT '1=sudah bekerja 2=belum',
   `id_pekerjaan` int(11) UNSIGNED DEFAULT NULL,
+  `id_jp` int(11) NOT NULL,
+  `id_agama` varchar(50) NOT NULL,
   `sts_menikah` tinyint(4) DEFAULT NULL COMMENT '1=blm kawin 2=sudah 3=cerai',
   `jml_anak` int(11) DEFAULT NULL,
   `_cdate` datetime DEFAULT current_timestamp(),
@@ -92,17 +94,21 @@ CREATE TABLE `data_alumni` (
 -- Dumping data untuk tabel `data_alumni`
 --
 
-INSERT INTO `data_alumni` (`id`, `username`, `nama_depan`, `nama_belakang`, `password`, `jk`, `hp`, `email`, `alamat`, `id_goldar`, `id_penghasilan`, `id_kelas_1`, `id_kelas_2`, `id_kelas_3`, `id_tahun`, `sts_pekerjaan`, `id_pekerjaan`, `sts_menikah`, `jml_anak`, `_cdate`, `sts`) VALUES
-(8, 'juanjancok', 'juan', 'cool', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '082982722662', 'ozil@gmail.com', 'pamanukan', 3, 3, 1, 1, 1, 1, 1, 10, 1, 10, '2021-02-18 14:53:53', 0),
-(9, 'elocogol', 'elocogol', 'gonzales', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'elogo@gmail.com', 'pamanukan', 1, 2, NULL, NULL, NULL, 1, 1, 10, 1, 6, '2021-02-18 15:32:24', 0),
-(10, 'maman123', 'maman', 'abdurahman', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '08686868686', 'maman@gmail.com', 'BANDUNG', 1, 3, 1, 1, 1, 1, 1, 10, 2, 4, '2021-02-18 15:33:42', 0),
-(12, 'joko123', 'joko', 'susilo', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '08828828282', 'susilo@gmail.com', 'subang', 1, 2, NULL, NULL, NULL, 1, 1, 1, 3, 2, '2021-02-21 11:22:06', 0),
-(13, 'apinchocs', 'apin', 'chocs', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'apn@gmail.com', 'pamanukan', 2, 1, 2, 2, 2, 1, 1, 10, 1, 2, '2021-02-21 15:26:12', 0),
-(14, 'michaelj', 'michael', 'juman', 'd41d8cd98f00b204e9800998ecf8427e', 'P', '087787787', 'michaelj@gmail.com', 'subang', 3, 3, 1, 2, 2, 1, 1, 10, 1, 2, '2021-02-22 12:55:43', 0),
-(15, 'sinsin', 'mia', 'miff', 'd41d8cd98f00b204e9800998ecf8427e', 'P', '098888', 'miff@gmail.com', 'asaasasa', 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, '2021-02-22 17:01:51', 0),
-(16, 'admin', 'eeeeeee', 'dfdf', '21232f297a57a5a743894a0e4a801fc3', '', '444444', 'www@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, '2021-02-22 17:28:13', 0),
-(17, 'alfin@gmail.com', 'alfin', 'mn', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'alfin@gmail.com', 'bandung', 4, 1, 1, 1, 1, 1, 1, 1, 1, 3, '2021-02-22 17:46:31', 0),
-(18, 'anjay@gmail.com', 'anjay', 'mabar', '81dc9bdb52d04dc20036dbd8313ed055', '', '3333333333333', 'anjay@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, '2021-02-22 17:52:01', 0);
+INSERT INTO `data_alumni` (`id`, `username`, `nama_depan`, `nama_belakang`, `password`, `jk`, `hp`, `email`, `alamat`, `id_goldar`, `id_penghasilan`, `id_kelas_1`, `id_kelas_2`, `id_kelas_3`, `id_tahun`, `sts_pekerjaan`, `id_pekerjaan`, `id_jp`, `id_agama`, `sts_menikah`, `jml_anak`, `_cdate`, `sts`) VALUES
+(8, 'juanjancok', 'juan', 'cool', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '082982722662', 'ozil@gmail.com', 'pamanukan', 3, 3, 1, 1, 1, 1, 1, 10, 2, '', 1, 10, '2021-02-18 14:53:53', 1),
+(9, 'elocogol', 'elocogol', 'gonzales', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'elogo@gmail.com', 'pamanukan', 1, 2, NULL, NULL, NULL, 1, 1, 10, 0, '', 1, 6, '2021-02-18 15:32:24', 0),
+(10, 'maman123', 'maman', 'abdurahman', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '08686868686', 'maman@gmail.com', 'BANDUNG', 1, 3, 1, 1, 1, 1, 1, 10, 0, '', 2, 4, '2021-02-18 15:33:42', 0),
+(12, 'joko123', 'joko', 'susilo', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '08828828282', 'susilo@gmail.com', 'subang', 1, 2, NULL, NULL, NULL, 1, 1, 1, 0, '', 3, 2, '2021-02-21 11:22:06', 0),
+(13, 'apinchocs', 'apin', 'chocs', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'apn@gmail.com', 'pamanukan', 2, 1, 2, 2, 2, 1, 1, 10, 0, '', 1, 2, '2021-02-21 15:26:12', 0),
+(14, 'michaelj', 'michael', 'juman', 'd41d8cd98f00b204e9800998ecf8427e', 'P', '087787787', 'michaelj@gmail.com', 'subang', 3, 3, 1, 2, 2, 1, 1, 10, 0, '', 1, 2, '2021-02-22 12:55:43', 0),
+(15, 'sinsin', 'mia', 'miff', 'd41d8cd98f00b204e9800998ecf8427e', 'P', '098888', 'miff@gmail.com', 'asaasasa', 1, 1, 1, 1, 1, 1, 1, 1, 0, '', 1, 4, '2021-02-22 17:01:51', 0),
+(16, 'admin', 'eeeeeee', 'dfdf', '21232f297a57a5a743894a0e4a801fc3', '', '444444', 'www@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 0, '', NULL, NULL, '2021-02-22 17:28:13', 0),
+(17, 'alfin@gmail.com', 'alfin', 'mn', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0813131312', 'alfin@gmail.com', 'bandung', 4, 1, 1, 1, 1, 1, 1, 1, 2, '', 1, 3, '2021-02-22 17:46:31', 0),
+(18, 'anjay@gmail.com', 'anjay', 'mabar', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '3333333333333', 'anjay@gmail.com', 'pamanukan', 1, 1, 1, 1, 1, 1, 1, 1, 0, '', 1, 2, '2021-02-22 17:52:01', 0),
+(19, 'bean@gmail.com', 'mister', 'bean', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '0876767676', 'bean@gmail.com', 'london', 1, 1, 1, 1, 1, 1, 1, 12, 0, '', 1, 2, '2021-02-23 15:24:58', 0),
+(20, 'francesco@gmail.com', 'fransesco', 'bernoli', 'b23af1c3d38821633abe0423e1a99171', 'L', '03938383883', 'francesco@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 0, '', NULL, NULL, '2021-02-23 16:28:19', 0),
+(21, 'aceng', 'maman', 'dfdf', 'd41d8cd98f00b204e9800998ecf8427e', 'P', '0813131312', 'wwsw@gmail.com', 'pamanukan', 1, 1, 1, 1, 1, 1, 1, 1, 0, '', 1, 5, '2021-02-23 16:54:26', 0),
+(22, 'baba@gmail.com', 'ucok', 'baba', 'd41d8cd98f00b204e9800998ecf8427e', 'L', '333333333332', 'baba@gmail.com', 'pamanukan', 1, 1, 2, 1, 1, 1, 1, 1, 4, '1', 2, 5, '2021-02-23 17:03:29', 0);
 
 -- --------------------------------------------------------
 
@@ -129,8 +135,16 @@ CREATE TABLE `data_informasi` (
   `id_ji` tinyint(4) DEFAULT 1 COMMENT '1= berita 2=event 3=loker',
   `judul` varchar(250) DEFAULT NULL,
   `isi` text DEFAULT NULL,
-  `tgl` date DEFAULT NULL
+  `tgl` date DEFAULT NULL,
+  `sts` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `data_informasi`
+--
+
+INSERT INTO `data_informasi` (`id`, `id_ji`, `judul`, `isi`, `tgl`, `sts`) VALUES
+(1, 1, 'gaasss', 'gasken mabar', '2021-02-23', 1);
 
 -- --------------------------------------------------------
 
@@ -357,7 +371,19 @@ INSERT INTO `main_log` (`id_log`, `id_admin`, `nama_user`, `table_updated`, `aks
 (143, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-22 19:36:27'),
 (144, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-22 19:41:41'),
 (145, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 07:31:31'),
-(146, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 13:36:36');
+(146, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 13:36:36'),
+(147, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 13:54:46'),
+(148, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 13:56:36'),
+(149, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:00:01'),
+(150, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:22:48'),
+(151, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:24:35'),
+(152, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:27:01'),
+(153, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:39:07'),
+(154, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 14:43:22'),
+(155, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 15:25:00'),
+(156, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 16:01:06'),
+(157, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 16:02:04'),
+(158, 14, 'Mr.Cepi', 'admin', 'Login', '2021-02-23 16:28:42');
 
 -- --------------------------------------------------------
 
@@ -430,6 +456,26 @@ INSERT INTO `pengaturan` (`id`, `title`, `val`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tr_agama`
+--
+
+CREATE TABLE `tr_agama` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tr_agama`
+--
+
+INSERT INTO `tr_agama` (`id`, `nama`) VALUES
+(1, 'Islam'),
+(4, 'budha'),
+(7, 'kristen');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tr_goldar`
 --
 
@@ -489,11 +535,9 @@ CREATE TABLE `tr_jp` (
 --
 
 INSERT INTO `tr_jp` (`id`, `nama`) VALUES
-(1, 'SMA'),
 (2, 'D2'),
 (3, 'D3'),
 (4, 'D4'),
-(5, 'S1'),
 (6, 'S2'),
 (7, 'S3');
 
@@ -656,6 +700,12 @@ ALTER TABLE `pengaturan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `tr_agama`
+--
+ALTER TABLE `tr_agama`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tr_goldar`
 --
 ALTER TABLE `tr_goldar`
@@ -711,7 +761,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `data_alumni`
 --
 ALTER TABLE `data_alumni`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `data _chat`
@@ -723,7 +773,7 @@ ALTER TABLE `data _chat`
 -- AUTO_INCREMENT untuk tabel `data_informasi`
 --
 ALTER TABLE `data_informasi`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `main_level`
@@ -735,7 +785,7 @@ ALTER TABLE `main_level`
 -- AUTO_INCREMENT untuk tabel `main_log`
 --
 ALTER TABLE `main_log`
-  MODIFY `id_log` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id_log` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT untuk tabel `main_menu`
@@ -748,6 +798,12 @@ ALTER TABLE `main_menu`
 --
 ALTER TABLE `pengaturan`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tr_agama`
+--
+ALTER TABLE `tr_agama`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tr_goldar`
@@ -765,7 +821,7 @@ ALTER TABLE `tr_jenis_acara`
 -- AUTO_INCREMENT untuk tabel `tr_jp`
 --
 ALTER TABLE `tr_jp`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tr_kelas`

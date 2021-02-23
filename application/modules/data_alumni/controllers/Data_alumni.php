@@ -22,11 +22,15 @@ class Data_alumni extends CI_Controller
 		$ajax = $this->input->get_post("ajax");
 		if ($ajax == "yes") {
 			$data['kelas'] = $this->mdl->getKelas();
+			$data['jp'] = $this->mdl->getJp();
+			$data['agama'] = $this->mdl->getAgama();
 			$data['pekerjaan'] = $this->mdl->getPekerjaan();
 			$data['tahunLulus'] = $this->mdl->getTahunLulus();
 			$data['goldar'] = $this->mdl->getGoldar();
 			echo $this->load->view("index", $data);
 		} else {
+			$data['agama'] = $this->mdl->getAgama();
+			$data['jp'] = $this->mdl->getJp();
 			$data['kelas'] = $this->mdl->getKelas();
 			$data['pekerjaan'] = $this->mdl->getPekerjaan();
 			$data['tahunLulus'] = $this->mdl->getTahunLulus();
@@ -59,6 +63,12 @@ class Data_alumni extends CI_Controller
 			// tahun lulus 
 			$thnLulus = $this->mdl->getTahunLulusByid($dataDB->id_tahun);
 
+			// agama
+			$agama = $this->mdl->getAgamaByid($dataDB->id_agama);
+
+			// jenjang pendidikan
+			$jp = $this->mdl->getJpByid($dataDB->id_jp);
+
 			// status pernikahan 
 			if ($dataDB->sts_menikah == 1) {
 				$stsMenikah = "Belum Menikah";
@@ -88,6 +98,8 @@ class Data_alumni extends CI_Controller
 			// $row[]	= isset($penghasilan->penghasilan) ? ($penghasilan->penghasilan) : "";
 			$row[]	= isset($kelas->nama_kelas) ? ($kelas->nama_kelas) : "";
 			$row[]	= isset($thnLulus->tahun) ? ($thnLulus->tahun) : "";
+			$row[]	= isset($agama->nama) ? ($agama->nama) : "";
+			$row[]	= isset($jp->nama) ? ($jp->nama) : "";
 			$row[]	= isset($pekerjaan->nama) ? ($pekerjaan->nama) : "";
 			$row[] = $dataDB->jml_anak;
 			$row[] = $stsMenikah;
@@ -112,6 +124,8 @@ class Data_alumni extends CI_Controller
 	function form_tambah()
 
 	{
+		$data['jp'] = $this->mdl->getJp();
+		$data['agama'] = $this->mdl->getAgama();
 		$data['pekerjaan'] = $this->mdl->getPekerjaan();
 		$data['kelas'] = $this->mdl->getKelas();
 		$data['goldar'] = $this->mdl->getGoldar();
@@ -121,6 +135,8 @@ class Data_alumni extends CI_Controller
 	}
 	function form_edit()
 	{
+		$data['jp'] = $this->mdl->getJp();
+		$data['agama'] = $this->mdl->getAgama();
 		$data['kelas'] = $this->mdl->getKelas();
 		$data['pekerjaan'] = $this->mdl->getPekerjaan();
 		$data['goldar'] = $this->mdl->getGoldar();

@@ -20,15 +20,23 @@
 					echo form_dropdown("thnLulus", $dtTahunLulus, "", "class='form-control' onchange='reload_table()' ") ?>
  			</div>
 
- 			<div class="col-md-3 mb-3">
+ 			<div class="col-md-2 mb-3">
  				<?php
-					$dtPekerjaan[null] = "--pilih pekerjaan--";
+					$dtpekerjaan[null] = "--pilih pekerjaan--";
 					foreach ($pekerjaan as $pkj) :
-						$dtPekerjaan[$pkj->id] = $pkj->nama;
+						$dtpekerjaan[$pkj->id] = $pkj->nama;
 					endforeach;
-					echo form_dropdown("pekerjaan", $dtPekerjaan, "", "class='form-control' onchange='reload_table()' ") ?>
+					echo form_dropdown("pekerjaan", $dtpekerjaan, "", "class='form-control' onchange='reload_table()' ") ?>
  			</div>
 
+ 			<div class="col-md-2 mb-3">
+ 				<?php
+					$dtjp[null] = "--pilih pendidikan--";
+					foreach ($jp as $jpn) :
+						$dtjp[$jpn->id] = $jpn->nama;
+					endforeach;
+					echo form_dropdown("jp", $dtjp, "", "class='form-control' onchange='reload_table()' ") ?>
+ 			</div>
 
  			<div class="col-md-2 mb-3">
  				<?php
@@ -62,6 +70,8 @@
  					<!-- <th>PENGHASILAN</th> -->
  					<th>KELAS</th>
  					<th>TAHUN LULUS</th>
+ 					<th>AGAMA</th>
+ 					<th>PENDIDIKAN</th>
  					<th>PEKERJAAN</th>
  					<th>JUMLAH ANAK</th>
  					<th>STATUS PERNIKAHAN</th>
@@ -133,6 +143,7 @@
  				data.kelas = $('[name="kelas"]').val();
  				data.pekerjaan = $('[name="pekerjaan"]').val();
  				data.goldar = $('[name="goldar"]').val();
+ 				data.jp = $('[name="jp"]').val();
  			},
  			beforeSend: function() {
  				loading("area_lod");

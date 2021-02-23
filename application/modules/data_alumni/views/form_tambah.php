@@ -9,10 +9,10 @@
 
 				<div class="form-group row">
 					<!-- username -->
-					<label class="col-sm-5 col-form-label">Username</label>
+					<!-- <label class="col-sm-5 col-form-label">Username</label>
 					<div class="col-sm-6">
 						<input type="text" name="f[username]" required class="form-controls">
-					</div>
+					</div> -->
 
 					<!-- nama depan -->
 					<label class="col-sm-5 col-form-label">Nama Depan</label>
@@ -116,6 +116,32 @@
 						endforeach;
 
 						echo form_dropdown("f[id_goldar]", $dtgoldar, "", "class='form-control' ") ?>
+
+					</div>
+
+					<!-- agama  -->
+					<label class="col-sm-5 col-form-label">Agama</label>
+					<div class="col-sm-6">
+						<?php
+						$dtagama = array();
+						foreach ($agama as $agm) :
+							$dtagama[$agm->id] = $agm->nama;
+						endforeach;
+
+						echo form_dropdown("f[id_agama]", $dtagama, "", "class='form-control' ") ?>
+
+					</div>
+
+					<!-- Jenjang Pendidikan  -->
+					<label class="col-sm-5 col-form-label">Pendidikan</label>
+					<div class="col-sm-6">
+						<?php
+						$dtjp = array();
+						foreach ($jp as $j) :
+							$dtjp[$j->id] = $j->nama;
+						endforeach;
+
+						echo form_dropdown("f[id_jp]", $dtjp, "", "class='form-control' ") ?>
 
 					</div>
 

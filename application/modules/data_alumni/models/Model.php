@@ -53,6 +53,12 @@ class Model extends CI_Model
 			$this->db->where("id_goldar", $dtgoldar);
 		}
 
+		// conditional jp
+		$dtjp	= $this->input->post("jp");
+		if ($dtjp) {
+			$this->db->where("id_jp", $dtjp);
+		}
+
 		if (isset($_POST['search']['value'])) {
 			$searchkey = $_POST['search']['value'];
 
@@ -83,8 +89,10 @@ class Model extends CI_Model
 	{
 		$form	=	$this->input->post("f");
 		$pass   =   $this->input->post("password");
+		$username = $this->input->post("f[email]");
 		$md5    =   md5($pass);
 		$this->db->set($form);
+		$this->db->set("username", $username);
 		$this->db->set("password", $md5);
 		return $this->db->insert("data_alumni");
 	}
@@ -92,9 +100,11 @@ class Model extends CI_Model
 	{
 		$id		=	$this->input->post("id");
 		$form	=	$this->input->post("f");
+		$username = $this->input->post("f[email]");
 		$pass   =   $this->input->post("password");
 		$md5    =   md5($pass);
 		$this->db->set($form);
+		$this->db->set("username", $username);
 		$this->db->set("password", $md5);
 		$this->db->where("id", $id);
 		return $this->db->update("data_alumni");
@@ -122,6 +132,32 @@ class Model extends CI_Model
 	}
 
 
+	// getJenjangPendidikan
+	function getJp()
+	{
+		return  $this->db->get('tr_jp')->result();
+	}
+
+	function getJpByid($id)
+	{
+		$this->db->select('nama');
+		$this->db->from('tr_jp');
+		$this->db->where('id', $id);
+		return $this->db->get()->row();
+	}
+
+	// getAgama
+	function getAgama()
+	{
+		return  $this->db->get('tr_agama')->result();
+	}
+	function getAgamaByid($id)
+	{
+		$this->db->select('nama');
+		$this->db->from('tr_agama');
+		$this->db->where('id', $id);
+		return $this->db->get()->row();
+	}
 
 	// getGoldar 
 	function getGoldar()
